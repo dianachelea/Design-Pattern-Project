@@ -15,7 +15,10 @@
         public void RequestAnimals(int numberOfAnimals)
         {
             if(numberOfAnimals <= 0)
+            { 
                 Console.WriteLine("Number of animals cannot be negative or zero.");
+                return;
+            }
             peacockQuantityHandler.HandleRequest(numberOfAnimals);
         }
     }
