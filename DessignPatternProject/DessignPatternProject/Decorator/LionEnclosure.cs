@@ -10,22 +10,13 @@
         public override IEnclosure BuildEnclosure()
         {
             enclosure.BuildEnclosure();
-            AddFeatures(enclosure);
+            FenceType = "High and Strong Fence";
+            DoorType = "Reinforced Door";
+            GroundMaterial = "Grass and Sand Mix";
+            WaterFeature = "Large Water Pool";
+            HeatingSystem = "Advanced Heating System";
+            Console.WriteLine($"Upgrading enclosure for {Animal} with: {FenceType} {DoorType} {GroundMaterial} {WaterFeature} {HeatingSystem}");
             return enclosure;
         }
-        
-        public void AddFeatures(IEnclosure enclosure)
-        {
-            if(enclosure is PeacockEnclosure basic)
-            {
-                basic.FenceType = "High and Strong Fence";
-                basic.DoorType = "Reinforced Door";
-                basic.GroundMaterial = "Grass and Sand Mix";
-                basic.WaterFeature = "Large Water Pool";
-                basic.HeatingSystem = "Advanced Heating System";
-                Console.WriteLine($"Upgrading enclosure for {Animal} with: {basic.FenceType} {basic.DoorType} {basic.GroundMaterial} {basic.WaterFeature} {basic.HeatingSystem}");
-            }
-        }
-
     }
 }

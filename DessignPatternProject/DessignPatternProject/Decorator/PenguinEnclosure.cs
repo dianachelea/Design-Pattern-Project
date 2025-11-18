@@ -1,6 +1,4 @@
-﻿using DessignPatternProject.Models;
-
-namespace DessignPatternProject.Decorator
+﻿namespace DessignPatternProject.Decorator
 {
     public class PenguinEnclosure : EnclosureDecorator
     {
@@ -12,20 +10,12 @@ namespace DessignPatternProject.Decorator
         public override IEnclosure BuildEnclosure()
         {
             enclosure.BuildEnclosure();
-            AddFeature(enclosure);
+            FenceType = "Glass Fence";
+            WaterFeature = "Large Pool with Slide";
+            GroundMaterial = "Ice and Snow";
+            HeatingSystem = "Cooling System";
+            Console.WriteLine($"Upgrading enclosure for {Animal} with: {FenceType} {DoorType} {GroundMaterial} {WaterFeature} {HeatingSystem}");
             return enclosure;
-        }
-
-        public void AddFeature(IEnclosure enclosure)
-        {
-            if( enclosure is PeacockEnclosure basic)
-            {
-                basic.FenceType = "Glass Fence"; 
-                basic.WaterFeature = "Large Pool with Slide";
-                basic.GroundMaterial = "Ice and Snow";
-                basic.HeatingSystem = "Cooling System";
-                Console.WriteLine($"Upgrading enclosure for {Animal} with: {basic.FenceType} {basic.DoorType} {basic.GroundMaterial} {basic.WaterFeature} {basic.HeatingSystem}");
-            }
         }
     }
 }

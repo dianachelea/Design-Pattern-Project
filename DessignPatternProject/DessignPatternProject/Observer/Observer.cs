@@ -23,5 +23,10 @@
         {
             Console.WriteLine("You can " + message + " the zoo.");
         }
+
+        public override string ToString()
+        {
+            return UserName;
+        }
     }
 }

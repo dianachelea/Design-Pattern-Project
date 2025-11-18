@@ -34,13 +34,13 @@ namespace DessignPatternProject.Observer
 
         public void RegisterObserver(IObserver observer)
         {
-            Console.WriteLine("Observer Added : " + ((Observer)observer).UserName);
+            Console.WriteLine("Observer Added : " + observer.ToString());
             observers.Add(observer);
         }
 
         public void RemoveObserver(IObserver observer)
         {
-            Console.WriteLine("Observer Removed : " + ((Observer)observer).UserName);
+            Console.WriteLine("Observer Removed : " + observer.ToString());
             observers.Remove(observer);
         }
     }
